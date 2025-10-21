@@ -3,6 +3,7 @@ package com.example.justastart;
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -28,17 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void newTask(View v){
-        View taskBox = findViewById(R.id.PTask);
-        taskBox.setVisibility(VISIBLE);
-
-        View taskButton = findViewById(R.id.BTask);
-        taskButton.setVisibility(INVISIBLE);
-
-        View mapButton = findViewById(R.id.BMap);
-        mapButton.setVisibility(INVISIBLE);
-
-        View welcomeText = findViewById(R.id.TWelcome);
-        welcomeText.setVisibility(INVISIBLE);
-
+        Intent i = new Intent(this, newTaskActivity.class);
+        startActivity(i);
     }
 }
