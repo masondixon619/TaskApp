@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/recurringLabel"
-        android:layout_width="100dp"
+        android:layout_width="85dp"
         android:layout_height="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="328dp"
@@ -36,12 +36,12 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="40dp"
         android:clickable="false"
         android:text="Description:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/taskNameLabel" />
 
     <TextView
         android:id="@+id/taskNameLabel"
@@ -124,11 +124,49 @@
 
     <CheckBox
         android:id="@+id/recurringCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="13dp"
+        android:layout_width="32dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="20dp"
+        android:onClick="checkBoxClick"
         app:layout_constraintStart_toEndOf="@+id/recurringLabel"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="338dp" />
+
+    <RadioGroup
+        android:id="@+id/recurringOptionsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recurringLabel">
+
+        <RadioButton
+            android:id="@+id/radioDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily" />
+
+        <RadioButton
+            android:id="@+id/radioWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weekly" />
+
+        <RadioButton
+            android:id="@+id/radioMonthly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monthly" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
